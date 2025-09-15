@@ -1,0 +1,74 @@
+[
+  {
+    "date_generated": "2025-09-15T01:39:15.534Z",
+    "lottery_numbers": [
+      2,
+      9,
+      38,
+      43,
+      59
+    ],
+    "power_ball": 8,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-15T01:39:16.220Z",
+    "lottery_numbers": [
+      3,
+      12,
+      35,
+      58,
+      68
+    ],
+    "power_ball": 8,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-15T01:39:16.660Z",
+    "lottery_numbers": [
+      9,
+      12,
+      13,
+      26,
+      52
+    ],
+    "power_ball": 23,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-15T01:39:17.205Z",
+    "lottery_numbers": [
+      24,
+      34,
+      42,
+      52,
+      68
+    ],
+    "power_ball": 21,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-15T01:39:17.765Z",
+    "lottery_numbers": [
+      5,
+      24,
+      32,
+      52,
+      64
+    ],
+    "power_ball": 3,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-15T01:39:21.580Z",
+    "lottery_numbers": [
+      4,
+      36,
+      50,
+      60,
+      62
+    ],
+    "power_ball": 26,
+    "is_deleted": false
+  }
+]

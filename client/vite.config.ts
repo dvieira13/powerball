@@ -13,8 +13,8 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         "/api": {
-          // Use VITE_API_URL from .env (fallback to localhost:4002)
-          target: env.VITE_API_URL || "http://localhost:4002",
+          // Use VITE_API_URL from .env (fallback to localhost:4003)
+          target: env.VITE_API_URL || "http://localhost:4003",
           changeOrigin: true,
         },
       },

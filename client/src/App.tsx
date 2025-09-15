@@ -2,94 +2,61 @@ import { useState } from "react";
 import right_arrow from "./assets/right_arrow.svg";
 import "./App.css";
 
-// Define all conversion pairs
-const conversions = [
-  { from: "Fahrenheit", to: "Celsius" },
-  { from: "Fahrenheit", to: "Kelvin" },
-  { from: "Celsius", to: "Kelvin" },
-  { from: "Celsius", to: "Fahrenheit" },
-  { from: "Kelvin", to: "Celsius" },
-];
-
-// Map full names to backend codes
-const unitCodes: { [key: string]: string } = {
-  Fahrenheit: "F",
-  Celsius: "C",
-  Kelvin: "K",
-};
-
 function App() {
-  const [values, setValues] = useState<{ [key: string]: string }>({});
-  const [results, setResults] = useState<{ [key: string]: string }>({});
 
-  const handleChange = async (
-    e: React.ChangeEvent<HTMLInputElement>,
-    from: string,
-    to: string
-  ) => {
-    const newValue = e.target.value;
-    const key = `${from}-${to}`;
+  const [powerBall, setPowerBall] = useState("");
+  const [lotteryNumbers, setLotteryNumbers] = useState<(number | "")[]>(["", "", "", "", ""]);
 
-    setValues((prev) => ({ ...prev, [key]: newValue }));
-
-    if (newValue === "") {
-      setResults((prev) => ({ ...prev, [key]: "" }));
-      return;
-    }
-
+  const generateSlip = async () => {
     try {
       const res = await fetch(
-        `/api/convert?value=${newValue}&from=${unitCodes[from]}&to=${unitCodes[to]}`
+        `/api/generate-powerball-slip`
       );
       const data = await res.json();
 
-      if (data.output !== undefined) {
-        setResults((prev) => ({
-          ...prev,
-          [key]: data.output.toFixed(2),
-        }));
-      } else {
-        setResults((prev) => ({ ...prev, [key]: "Invalid" }));
-      }
+      data.lottery_numbers.forEach((num: number, index: number) => {
+        console.log(`Index ${index}: ${num}`);
+      });
+
+
+      setLotteryNumbers(data.lottery_numbers);
+      setPowerBall(data.power_ball);
+      console.log(data);
     } catch (err) {
-      console.error(`Error converting ${from}→${to}`, err);
-      setResults((prev) => ({ ...prev, [key]: "Error" }));
+      console.error("Error generating slip");
     }
-  };
+  }
 
   return (
     <>
-      <h1>Temperature Converter</h1>
+      <h1>Powerball</h1>
 
-      <div className="converter-container">
-        {conversions.map(({ from, to }) => {
-          const key = `${from}-${to}`;
-          return (
-            <div className="converter-row" key={key}>
-              <div className="input-container">
-                <input
-                  name={`${key}-input`}
-                  step="any"
-                  type="number"
-                  value={values[key] ?? ""}
-                  onChange={(e) => handleChange(e, from, to)}
-                  className="temp-input"
-                />
-                <p className="body-copy">{from}</p>
-              </div>
-              <img
-                className="conversion-icon"
-                src={right_arrow}
-                alt="right arrow"
-              />
-              <div className="result-container">
-                <h3 className="result">{results[key] ?? ""}</h3>
-                <p className="body-copy">{to}</p>
-              </div>
+      <div className="powerball-container">
+        <div className="powerball-row">
+          {/* idx is arrayindex, could also use num */}
+          {lotteryNumbers.slice(0, 3).map((num, idx) => (
+            <div key={idx} className="ball">
+              <p className="body-copy">{num}</p>
             </div>
-          );
-        })}
+          ))}
+        </div>
+        <div className="powerball-row">
+          {lotteryNumbers.slice(3, 5).map((num, idx) => (
+            <div key={idx} className="ball">
+              <p className="body-copy">{num}</p>
+            </div>
+          ))}
+        </div>
+        <div className="powerball-row">
+          <div className="powerball">
+            <p className="body-copy">{powerBall}</p>
+          </div>
+        </div>
       </div>
+
+      <button onClick={generateSlip} className="generate-button">
+        Generate
+      </button>
     </>
   );
 }

@@ -4,58 +4,131 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
 }
 
-.converter-container {
+.powerball-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.temp-input {
-  font-size: 28px;
-  width: 150px;
-  border-radius: 8px;
-  border: 2px solid #E6E6E6;
-  padding: 5px;
-}
-
-.converter-row {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.conversion-icon {
-  height: 40px;
-}
-
-.input-container,
-.result-container {
-  display: flex;
-  align-items: baseline;
-}
-
-.input-container {
   gap: 8px;
+  margin: 50px auto 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: rgb(34, 34, 34);
 }
 
-.input-container .body-copy,
-.result-container .body-copy {
-  width: 86px;
+.powerball-container .body-copy {
+  font-size: 43px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+  pointer-events: none;
 }
 
-.result-container {
-  gap: 10px;
+.powerball-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
 }
 
-.result {
-  min-width: 100px;
-  text-align: end;
+.ball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle at 30% 30%,
+      /* Position of the light source */
+      #ffffff,
+      /* Bright white for the highlight */
+      #e0e0e0,
+      /* Slightly darker white for the main body */
+      #c0c0c0
+      /* Even darker white for the shadow */
+    );
+  box-shadow:
+    inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+    /* Inner shadow for depth */
+    0px 5px 15px rgba(0, 0, 0, 0.3);
+  /* Outer shadow to lift it off the background */
+  transition: transform .7s ease-in;
+  z-index: 1;
+  animation: pulse 1s infinite;
 }
 
-@media (max-width: 767px) {
+.ball:hover {
+  /* Opposite effect styles */
+  background: radial-gradient(circle at 70% 70%,
+      #ffffff,
+      #e0e0e0,
+      #c0c0c0);
+  box-shadow:
+    inset 10px 10px 20px rgba(0, 0, 0, 0.2),
+    0px -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.powerball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle at 30% 30%,
+      /* Position of the light source */
+      #ff0000,
+      /* Bright white for the highlight */
+      #ba0000,
+      /* Slightly darker white for the main body */
+      #560000
+      /* Even darker white for the shadow */
+    );
+  box-shadow:
+    inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+    /* Inner shadow for depth */
+    0px 5px 15px rgba(0, 0, 0, 0.3);
+  /* Outer shadow to lift it off the background */
+  transition: transform .7s ease-in;
+  z-index: 1;
+  animation: pulse 1s infinite;
+}
+
+.powerball:hover {
+  /* Opposite effect styles */
+  background: radial-gradient(circle at 70% 70%,
+      #ff0000,
+      #ba0000,
+      #560000);
+  box-shadow:
+    inset 10px 10px 20px rgba(0, 0, 0, 0.2),
+    0px -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.generate-button {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(226, 226, 54);
+  font-size: 21px;
+  border-radius: 8px;
+  border: 1px solid #202020;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .generate-button:hover {
+    border: 2px solid #202020;
+  }
+}
+
+@media (max-width: 768px) {
   #root {
     margin: 30px auto;
     gap: 20px;

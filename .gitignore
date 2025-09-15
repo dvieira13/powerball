@@ -15,7 +15,7 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
-# Ignore env files
-.env
-client/.env
-server/.env
+# Ignore env files (when necessary)
+# .env
+# client/.env
+# server/.env
