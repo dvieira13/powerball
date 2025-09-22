@@ -13,7 +13,7 @@ Full-stack TypeScript project:
 
 To test FS module API's: 
 1. Open Bash shell
-2. BASE_URL="http://localhost:4000/api"
+2. BASE_URL="http://localhost:4003/api"
 
 - Generate a new slip -
 - curl -s -X GET "$BASE_URL/generate-powerball-slip"

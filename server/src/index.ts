@@ -17,6 +17,7 @@ const port = process.env.PORT || 4003;
 app.use(cors());
 app.use(express.json());
 
+//generates powerball slip
 app.get("/api/generate-powerball-slip", async (req: Request, res: Response) => {
   try {
     const ball_values: number[] = getBallValues(69);
