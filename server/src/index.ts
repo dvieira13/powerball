@@ -28,7 +28,7 @@ app.get("/api/generate-powerball-slip", async (req: Request, res: Response) => {
       lottery_numbers: ball_values,
       power_ball: powerball_value,
     };
-    console.log(slip);
+
     await saveSlip(slip);
     res.json(slip);
   } catch (err) {
@@ -53,7 +53,7 @@ app.delete("/api/delete-powerball-slip/:index", async (req: Request, res: Respon
   try {
     const index = parseInt(req.params.index);
     await deleteSlip(index);
-    res.json({ message: `Slip ${index} marked as deleted` });
+    res.json({ message: "Slip ${index} marked as deleted" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to delete slip" });
@@ -74,7 +74,7 @@ app.delete("/api/delete-powerball-slips", async (req: Request, res: Response) =>
 // start server only if run directly (not during tests)
 if (require.main === module) {
   app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log("Server running on http://localhost:${port}");
   });
 }
 
