@@ -70,5 +70,149 @@
     ],
     "power_ball": 26,
     "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:27.544Z",
+    "lottery_numbers": [
+      2,
+      18,
+      21,
+      24,
+      47
+    ],
+    "power_ball": 14,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:30.374Z",
+    "lottery_numbers": [
+      28,
+      29,
+      45,
+      60,
+      68
+    ],
+    "power_ball": 22,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:32.659Z",
+    "lottery_numbers": [
+      13,
+      19,
+      39,
+      43,
+      65
+    ],
+    "power_ball": 21,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:35.035Z",
+    "lottery_numbers": [
+      14,
+      24,
+      27,
+      28,
+      69
+    ],
+    "power_ball": 16,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:52.114Z",
+    "lottery_numbers": [
+      31,
+      35,
+      60,
+      64,
+      66
+    ],
+    "power_ball": 20,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:52.867Z",
+    "lottery_numbers": [
+      21,
+      31,
+      40,
+      43,
+      58
+    ],
+    "power_ball": 3,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:54.128Z",
+    "lottery_numbers": [
+      6,
+      12,
+      19,
+      39,
+      50
+    ],
+    "power_ball": 20,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:58.677Z",
+    "lottery_numbers": [
+      13,
+      16,
+      28,
+      41,
+      61
+    ],
+    "power_ball": 11,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:24:59.131Z",
+    "lottery_numbers": [
+      21,
+      31,
+      36,
+      49,
+      50
+    ],
+    "power_ball": 23,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:25:00.159Z",
+    "lottery_numbers": [
+      15,
+      37,
+      40,
+      43,
+      51
+    ],
+    "power_ball": 17,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:25:00.687Z",
+    "lottery_numbers": [
+      3,
+      9,
+      21,
+      51,
+      68
+    ],
+    "power_ball": 16,
+    "is_deleted": false
+  },
+  {
+    "date_generated": "2025-09-17T17:25:43.239Z",
+    "lottery_numbers": [
+      2,
+      10,
+      34,
+      54,
+      56
+    ],
+    "power_ball": 6,
+    "is_deleted": false
   }
 ]
